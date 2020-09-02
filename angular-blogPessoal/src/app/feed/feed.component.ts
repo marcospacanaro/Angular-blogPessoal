@@ -11,6 +11,9 @@ import { TemaService } from '../service/tema.service';
 })
 export class FeedComponent implements OnInit {
 
+  key = 'data'
+  reverse = true
+
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
 
@@ -35,6 +38,23 @@ export class FeedComponent implements OnInit {
       this.listaPostagens = resp
 
     })
+  }
+
+  publicar() {
+    this.tema.id = this.idTema
+    this.postagem.tema = this.tema
+
+    if (this.postagem.titulo == null || this.postagem.texto == null || this.postagem.tema == null) {
+      alert('Preencha todos os campos para fazer uma publicação.')
+    } 
+    else { 
+      this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => { 
+        this.postagem = resp
+        this.postagem = new Postagem()
+        alert('Postagem realizada com sucesso!')
+        this.findAllPostagens()
+      })
+    }
   }
 
   findAllTemas() {

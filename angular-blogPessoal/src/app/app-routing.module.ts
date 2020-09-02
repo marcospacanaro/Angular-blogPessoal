@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { FeedComponent } from './feed/feed.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
+import { PostTemaComponent } from './post-tema/post-tema.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "feed", component: FeedComponent},
   {path: "cadastro", component: CadastroComponent},
-  {path: "login", component: LoginComponent}
+  {path: "login", component: LoginComponent},
+  {path: "cadastro/tema", component: PostTemaComponent}
 
 ];
 
