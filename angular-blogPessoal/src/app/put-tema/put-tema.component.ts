@@ -37,5 +37,4 @@ export class PutTemaComponent implements OnInit {
       alert('Tema atualizado com sucesso!')
     })
   }
-
 }
