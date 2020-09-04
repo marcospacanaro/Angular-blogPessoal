@@ -43,6 +43,8 @@ export class PostTemaComponent implements OnInit {
         this.tema = resp
         this.router.navigate[('/feed')]
         alert('Tema cadastrado com sucesso!')
+        this.tema = new Tema()
+        this.findAllTemas()
       })
     }
   }

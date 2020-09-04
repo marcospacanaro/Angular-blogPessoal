@@ -51,6 +51,7 @@ export class FeedComponent implements OnInit {
     else { 
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => { 
         this.postagem = resp
+        console.log(this.postagem)
         this.postagem = new Postagem()
         alert('Postagem realizada com sucesso!')
         this.findAllPostagens()
@@ -69,5 +70,4 @@ export class FeedComponent implements OnInit {
       this.tema = resp;
     })
   }
-
 }
